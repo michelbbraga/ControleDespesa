@@ -1,0 +1,7 @@
+C:\Users\lenovo\Documents\Estudos\CSharpe\codigos\ControleDespesa4\obj\Debug\ControleDespesa4.csprojAssemblyReference.cache
+C:\Users\lenovo\Documents\Estudos\CSharpe\codigos\ControleDespesa4\obj\Debug\ControleDespesa4.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\Documents\Estudos\CSharpe\codigos\ControleDespesa4\bin\Debug\ControleDespesa4.exe.config
+C:\Users\lenovo\Documents\Estudos\CSharpe\codigos\ControleDespesa4\bin\Debug\ControleDespesa4.exe
+C:\Users\lenovo\Documents\Estudos\CSharpe\codigos\ControleDespesa4\bin\Debug\ControleDespesa4.pdb
+C:\Users\lenovo\Documents\Estudos\CSharpe\codigos\ControleDespesa4\obj\Debug\ControleDespesa4.exe
+C:\Users\lenovo\Documents\Estudos\CSharpe\codigos\ControleDespesa4\obj\Debug\ControleDespesa4.pdb
