@@ -17,7 +17,7 @@ namespace ControleDespesa4
         public int periodo_recorr;
         public int codigo_receita;
 
-        public void LancarReceitas(int idopmenu)
+        public void Lancarreceitas(int idopmenu)
 
         {
             if (idopmenu == 4)
