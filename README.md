@@ -17,3 +17,18 @@ We currently control our budget in spreadsheets and to make it easier I would li
 ## Some observations 
 
 ## Functionalities 
+
+This program must have the following functionality options:
+(Este programa deve ter as seguintes opções de funcionalidades:)
+
+- Allow to register, consult and exclude types of expenses, for classification and organization.
+(Permitir cadastrar, consultar e excluir tipos de despesas, para classificação e organização)
+
+- Enable to register, consult and exclude types of income or gains, for classification and organization.
+(Pirmitir cadastrar, consultar e excluir tipos de receitas ou ganhos, para classificação e organização)
+
+- Make it possible to register, consult and exclude daily expenses, for control and organization
+(Pirmitir cadastrar, consultar e excluir despesas diarias, para controle e organização)
+
+- Enable to register, consult and exclude daily earnings / revenues, for control and organization
+(Pirmitir cadastrar, consultar e excluir ganhos/receitas diarias, para controle e organização)
