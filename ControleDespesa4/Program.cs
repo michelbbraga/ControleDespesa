@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,6 +24,7 @@ namespace ControleDespesa4
                 int opmenu = int.Parse(Console.ReadLine());
 
                 Despesa operadesp = new Despesa();
+                Receita operareceita = new Receita();
                 switch (opmenu)
                 {
                     case 1:
@@ -34,6 +36,9 @@ namespace ControleDespesa4
                         break;
                     case 3:
                         operadesp.Excluidepesa(opmenu);
+                        break;
+                    case 4:
+                        operareceita.Lancarreceitas(opmenu);
                         break;
                     case 7:
                         operadesp.Lacadespesa(opmenu);

@@ -20,7 +20,7 @@ namespace ControleDespesa4
         {
             try
             {
-                sconexao = // inserir caminho da conexão com o banco;
+                sconexao = ""; // inserir caminho da conexão com o banco; // inserir caminho da conexão com o banco;
                 fazconexao = new SqlConnection(sconexao);
                 fazconexao.Open();
             }
