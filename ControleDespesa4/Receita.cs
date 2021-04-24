@@ -17,6 +17,11 @@ namespace ControleDespesa4
         public int periodo_recorr;
         public int codigo_receita;
 
+
+        IncluirDB incluirrec = new IncluirDB("Receita");
+        IncluirDB incluimvrec = new IncluirDB("Mov_Receita");
+        ConsultDB fazconsulta = new ConsultDB("Receita");
+
         public void Lancarreceitas(int idopmenu)
 
         {
@@ -44,5 +49,73 @@ namespace ControleDespesa4
                 descricao_receita = Console.ReadLine();
             }
         }
+        public void Consultar(int idopmenu)
+        {
+            Console.WriteLine("Bem vindo a consulta de Receita, o que deseja consultar");
+            if (idopmenu == 5)
+            {
+                Console.WriteLine(" 1 - Todos lançamentos \n 2 - Por data \n 3 - Por tipo \n 4 - Por descrição");
+            }
+            if (idopmenu == 11)
+            {
+                Console.WriteLine(" 1 - Todos lançamentos  \n 3 - Por tipo \n 4 - Por descrição");
+            }
+
+            int opconsultdesp = int.Parse(Console.ReadLine());
+
+            switch (opconsultdesp)
+            {
+                case 1:
+                    //chamar a consulta ao banco 
+                    if (idopmenu == 5)
+                    {
+                        //fazconsulta.ConultaMovDepesa();
+                        fazconsulta.ConsultaMovReceita();
+                    }
+                    if (idopmenu == 11)
+                    {
+                        fazconsulta.ConsultaReceita();
+                    }
+
+                    break;
+                case 2:
+                    //chamar a consulta ao banco
+                    Console.WriteLine("Cosnulta 2");
+                    Console.Write("Digite a data que deseja filtrar: ");
+                    DateTime dtlanc = DateTime.Parse(Console.ReadLine());
+                    fazconsulta.ConsultaMovReceita(dtlanc);
+
+                    break;
+                case 3:
+                    //chamar a consulta ao banco
+                    Console.WriteLine("Cosnulta 3");
+                    Console.Write("Digite o codigo do tipo que  deseja filtrar: ");
+                    int idtipo = int.Parse(Console.ReadLine());
+                    if (idopmenu == 5)
+                    {
+                        fazconsulta.ConsultaMovReceita(idtipo);
+                    }
+                    if (idopmenu == 11)
+                    {
+                        fazconsulta.ConsultaReceita(idtipo);
+                    }
+                    break;
+                case 4:
+                    Console.WriteLine("Consulta 4");
+                    Console.Write("Digite a descrição que  deseja filtrar: ");
+                    string receita = Console.ReadLine();
+                    if (idopmenu == 5)
+                    {
+                        fazconsulta.ConsultaMovReceita(receita);
+                    }
+                    if (idopmenu == 11)
+                    {
+                        fazconsulta.ConsultaReceita(receita);
+                    }
+                    break;
+
+            }
+        }
     }
+
 }
