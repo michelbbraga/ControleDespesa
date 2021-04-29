@@ -116,6 +116,65 @@ namespace ControleDespesa4
 
             }
         }
-    }
+        public void ExcluiReceita(int idopmenu)
+        {
+            string idcasecoluna = "";
 
+            if (idopmenu == 6)
+            {
+                Console.WriteLine("Bem Vindo a Exclusão");
+                Console.Write(" O que deseja excluir ");
+                Consultar(5);  // 2 sao consultas referentes a tab de Movimentacao de Receita
+                Console.Write(" Informe o indice da coluna que quer excluir (1,2,3,4) ");
+                int indicoluna = int.Parse(Console.ReadLine());
+                Console.Write(" Informe qual conteudo do campo a ser excluido:  ");
+                string campconteudo = Console.ReadLine();
+
+                switch (indicoluna)
+                {
+                    case 1:
+                        idcasecoluna = "Id_mv_receita";
+                        break;
+                    case 2:
+                        idcasecoluna = "data_mov_receita";
+                        break;
+                    case 3:
+                        idcasecoluna = "valor_rec";
+                        break;
+                    case 4:
+                        idcasecoluna = "desc_receita";
+                        break;
+                }
+                ExcluirDB excluimovdespDB = new ExcluirDB("Mov_Receita", idcasecoluna, campconteudo);
+                Console.WriteLine("Digite ENTER para finalizar");
+                Console.ReadKey();
+            }
+            if (idopmenu == 12)
+            {
+
+                Console.WriteLine("Bem Vindo a Exclusão");
+                Console.Write(" O que deseja excluir verifique os registros:  ");
+                Consultar(11);
+                Console.Write(" Informe o indice da coluna que quer excluir (1 ou 2) ");
+                int indicoluna = int.Parse(Console.ReadLine());
+                Console.Write(" Informe qual conteudo do campo a ser excluido:  ");
+                string campconteudo = Console.ReadLine();
+
+                switch (indicoluna)
+                {
+                    case 1:
+                        idcasecoluna = "Idreceita";
+                        break;
+                    case 2:
+                        idcasecoluna = "nomereceta";
+                        break;
+                }
+                ExcluirDB excluidespDB = new ExcluirDB("Receita", idcasecoluna, campconteudo);
+                Console.WriteLine("Digite ENTER para finalizar");
+                Console.ReadKey();
+            }
+
+        }
+
+    }
 }
