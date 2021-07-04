@@ -15,8 +15,9 @@ namespace ControleDespesa4
         {
             try
             {
-                var Sql = ($"Delete {Tabela} where {Campo} = '{Condicao}'");
-                OpercaoSQL(Sql);
+                
+                var Sql = ($"Delete {Tabela} where {Campo} = @Condicao");
+                OpercaoSQL(Sql, Condicao);
                 mslog = " #BDC14 MOdulo de Exclucao - Inciado com sucesso 14 ";
 
             }
