@@ -17,7 +17,6 @@ namespace ControleDespesa4
         public int periodo_recorr;
         public int codigo_receita;
 
-
         IncluirDB incluirrec = new IncluirDB("Receita");
         IncluirDB incluimvrec = new IncluirDB("Mov_Receita");
         ConsultDB fazconsulta = new ConsultDB("Receita");
@@ -40,15 +39,21 @@ namespace ControleDespesa4
 
                 Console.Write("Informe o valor a descrição da Receita:  ");
                 descricao_receita = Console.ReadLine();
+
+                incluimvrec.IncluirMovReceita(codigo_receita, data_receita, vl_receita, descricao_receita);
             }
             if (idopmenu == 10)
             {
                 Console.WriteLine("Bem Vindo ao Administração de Receita !!!!");
 
-                Console.Write("Informe o valor a descrição da Receita:  ");
+                Console.Write("Informe a descrição da Receita:  ");
                 descricao_receita = Console.ReadLine();
+
+                incluirrec.IncluirReceita(descricao_receita);
+
             }
         }
+
         public void Consultar(int idopmenu)
         {
             Console.WriteLine("Bem vindo a consulta de Receita, o que deseja consultar");
@@ -104,6 +109,7 @@ namespace ControleDespesa4
                     Console.WriteLine("Consulta 4");
                     Console.Write("Digite a descrição que  deseja filtrar: ");
                     string receita = Console.ReadLine();
+                    receita = "%" + receita + "%";
                     if (idopmenu == 5)
                     {
                         fazconsulta.ConsultaMovReceita(receita);
@@ -111,7 +117,7 @@ namespace ControleDespesa4
                     if (idopmenu == 11)
                     {
                         fazconsulta.ConsultaReceita(receita);
-                    }
+                    }                    
                     break;
 
             }
@@ -175,6 +181,5 @@ namespace ControleDespesa4
             }
 
         }
-
     }
 }

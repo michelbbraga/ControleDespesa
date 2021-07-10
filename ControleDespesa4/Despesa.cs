@@ -7,6 +7,12 @@ namespace ControleDespesa4
 {
     public class Despesa
     {
+        //public string Codigo_mov_desp { get; set; }
+        public string Codigo_desp { get; set; }
+        public string Data_despesa { get; set;  }
+        public string Vl_despesa { get; set; }
+        public string Descricao_desp { get; set; }
+
         public decimal vl_despesa;
         public string nome_despesa;
         public string descricao_despesa;
@@ -16,10 +22,26 @@ namespace ControleDespesa4
         public int periodo_recorr;
         public int codigo_desp;
 
+        public Despesa()
+        {
+            
+        }
+
+
+        public Despesa( string id_desp, string data_despe, string valor_desp,string desc_desp)
+        {
+            //Codigo_mov_desp = id_mv_desp;
+            Codigo_desp = id_desp;
+            Data_despesa =  data_despe;
+            Vl_despesa =  valor_desp;
+            Descricao_desp =  desc_desp;
+
+        }
+
         ConsultDB fazconsulta = new ConsultDB("Mov_despesa");
+        IncluirDB incluidesp = new IncluirDB("Despesa");
         IncluirDB incluimvdesp = new IncluirDB("Mov_despesa");
         
-
         public void Lacadespesa(int idopmenu)
         {
             if (idopmenu == 1)
@@ -52,7 +74,7 @@ namespace ControleDespesa4
             }
             if (idopmenu == 7)
             {
-                incluimvdesp.IncluirDespesa(descricao_despesa);
+                incluidesp.IncluirDespesa(descricao_despesa);
             }
             
 
@@ -78,7 +100,7 @@ namespace ControleDespesa4
                     //chamar a consulta ao banco 
                     if (idopmenu == 2)
                     {
-                        fazconsulta.ConultaMovDepesa();
+                        fazconsulta.ConultaMovDepesa();                        
                     }
                     else 
                     {
@@ -112,6 +134,7 @@ namespace ControleDespesa4
                     Console.WriteLine("Consulta 4");
                     Console.Write("Digite a descrição que  deseja filtrar: ");
                     string descdesp = Console.ReadLine();
+                    descdesp = ("%" + descdesp + "%");
                     if (idopmenu == 2)
                     {
                         fazconsulta.ConultaMovDepesa(descdesp);
